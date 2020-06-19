@@ -1,0 +1,10 @@
+set smooth
+include "/usr/share/nano-syntax-highlighting/*.nanorc"
+set autoindent
+set casesensitive
+set historylog
+set morespace
+set nowrap
+set tabsize 2
+set tabstospaces
+set constantshow
