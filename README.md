@@ -14,5 +14,6 @@ Here's a list of programs you'll need to use these at the greatest level:
 - lsd
 - fish
 - kitty
+- neofetch
 
 If you find any issues with these or a program I forgot to mention, feel free to make an issue.
