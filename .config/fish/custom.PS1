@@ -87,7 +87,7 @@ return (
     # TODO: git branch and status
     do {
         sub {
-            chomp(my ($battlevelstr) = `cat /sys/class/power_supply/BAT0/capacity`);
+            chomp(my ($battlevelstr) = `cat /sys/class/power_supply/BAT0/capacity 2> /dev/null`);
             my $battlevel = $battlevelstr + 0;
             my $icon = '';
             if ($battlevel >= 0 && $battlevel <= 10) {
@@ -125,7 +125,7 @@ return (
             my $col = Reset;
 
             if ($? == 0) {
-                 chomp(my $retv = `git status --porcelain --ignore-submodules`);
+                 chomp(my $retv = `git status --porcelain --ignore-submodules 2> /dev/null`);
                  if (length($retv) == 0) {
                     @ret = (HOSTNAME_BG / Green + Reset + Bold, SEP_COLOR, USERNAME_FG / Green + Reset + Bold);
                     $col = Green;
