@@ -7,6 +7,7 @@
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
+export PATH="$PATH:$HOME/.cargo/bin:$HOME/.yarn/bin:$HOME/.gem/ruby/2.7.0/bin:$HOME/.local/bin"
 
 # Some excerpt I found on StackOverflow for SSH agent auto-start that works.
 SSH_ENV="$HOME/.ssh/environment"
@@ -24,7 +25,7 @@ function start_agent {
 if [ -f "${SSH_ENV}" ]; then
     . "${SSH_ENV}" > /dev/null
     #ps ${SSH_AGENT_PID} doesn't work under cywgin
-    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+    ps -ef | /bin/grep ${SSH_AGENT_PID} | /bin/grep ssh-agent$ > /dev/null || {
         rm -rf ${SSH_ENV}
         start_agent;
     }
@@ -38,10 +39,11 @@ if [ ! -z "$USE_BASH" ]; then
   return
 fi
 
-
 # Check if $USE_FISH or $KITTY_WINDOW_ID (defined by Kitty) are defined, if so, automatically
 # use fish then exit on return
 if [ ! -z "$USE_FISH" -o ! -z "$KITTY_WINDOW_ID" ]; then
 	/usr/bin/fish -i
-	exit
+	exit 0
 fi
+
+

@@ -9,11 +9,12 @@ Here's a list of programs you'll need to use these at the greatest level:
 - radare2
 - gdb
 - pwndbg
-- nano-syntax-highlighting
 - ripgrep
-- lsd
+- exa
 - fish
 - kitty
-- neofetch
+- fzf
+- neovim
+- pkgfile / pacman / yay
 
 If you find any issues with these or a program I forgot to mention, feel free to make an issue.

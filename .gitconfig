@@ -1,7 +1,8 @@
 [commit]
     gpgsign = true
 [core]
-    editor = nano
+    editor = nvim
+    pager = delta
 [alias]
     commit = commit -S
 [diff]
@@ -14,7 +15,19 @@
     cmd = kitty +kitten diff $LOCAL $REMOTE
 [difftool "kitty.gui"]
     cmd = kitty kitty +kitten diff $LOCAL $REMOTE
-[credential]
-    helper = store --file ~/.gitcreds
 [advice]
     detachedHead = false
+[merge]
+    ff = only
+[pull]
+    ff = only
+    rebase = true
+[init]
+    defaultBranch = main
+[reebase]
+    abbreviateCommands = true
+[filter "lfs"]
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
